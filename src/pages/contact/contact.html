@@ -9,9 +9,19 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+    <ion-item *ngFor="let user of users">
+      <ion-card>
+        <img [src]="user.picture.large"/>
+        <ion-card-content>
+          <ion-card-title>
+          {{ user.name.first }} {{ user.name.last }}
+          </ion-card-title>
+          <p>email: {{ user.email }}</p>
+          <p>cell: {{ user.cell }}</p>
+        </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
+
+
 </ion-content>
